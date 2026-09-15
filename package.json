@@ -33,7 +33,7 @@
     "packages/isogate-replay"
   ],
   "devDependencies": {
-    "@types/node": "^22.0.0",
+    "@types/node": "^26.5.1",
     "typescript": "^5.7.0"
   },
   "packageManager": "pnpm@9.15.0"
