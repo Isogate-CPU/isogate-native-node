@@ -1,0 +1,40 @@
+{
+  "name": "@isogate/node",
+  "version": "0.3.1",
+  "private": true,
+  "type": "module",
+  "description": "Cross-platform native CPU provider runtime and deterministic workload CLI for Isogate.",
+  "bin": {
+    "isogate-node": "dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "pnpm --filter @isogate/replay build && tsc -p tsconfig.json",
+    "typecheck": "pnpm --filter @isogate/replay build && tsc -p tsconfig.json --noEmit",
+    "test": "pnpm --filter @isogate/replay test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@isogate/replay": "workspace:*"
+  },
+  "workspaces": [
+    "packages/isogate-replay"
+  ],
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  },
+  "packageManager": "pnpm@9.15.0"
+}

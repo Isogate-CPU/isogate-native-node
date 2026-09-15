@@ -1,0 +1,26 @@
+{
+  "name": "@isogate/replay",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Internal canonical replay implementation used by the Native Node runtime.",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./vectors": {
+      "types": "./dist/vectors.d.ts",
+      "import": "./dist/vectors.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "pnpm run build && node --test dist/vectors.test.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}
